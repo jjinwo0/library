@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 @Getter
 public class ApiKeys {
 
+
+    //test
     private String smsApiKey = "NCSPSSPAUUMYHEAG";
     private String smsApiSecret = "JITMUFAHSSTWMD2K2DUAARSGNJL3R2A5";
 
