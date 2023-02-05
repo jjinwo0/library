@@ -18,6 +18,7 @@ public class MessageService {
 
     private String apiKey = keys.getSmsApiKey();
     private String apiSecret = keys.getSmsApiSecret();
+    private String fromNumber = keys.getFromNumber()
 
     public void sendMessage(String toNumber, String randNumber){
 
@@ -25,7 +26,7 @@ public class MessageService {
 
         HashMap<String, String> params = new HashMap<>();
         params.put("to", toNumber);
-        params.put("from", "02-123-4567");
+        params.put("from", fromNumber);
         params.put("type", "SMS");
         params.put("text", "[Somnium] 인증번호 "+randNumber+" 를 입력하세요.");
         params.put("app_version", "test app 1.2"); // application name and version

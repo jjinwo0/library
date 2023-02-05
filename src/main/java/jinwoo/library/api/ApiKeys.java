@@ -11,4 +11,7 @@ public class ApiKeys {
 
     @Value("${coolsms-api-secret}")
     private String smsApiSecret;
+
+    @Value("${coolsms-fromNumber}")
+    private String fromNumber;
 }
