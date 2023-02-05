@@ -1,6 +1,6 @@
 package jinwoo.library.service;
 
-import jinwoo.library.apikeys.ApiKeys;
+import jinwoo.library.api.ApiKeys;
 import lombok.RequiredArgsConstructor;
 import net.nurigo.java_sdk.api.Message;
 import net.nurigo.java_sdk.exceptions.CoolsmsException;
