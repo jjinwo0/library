@@ -18,7 +18,7 @@ public class MessageService {
 
     private String apiKey = keys.getSmsApiKey();
     private String apiSecret = keys.getSmsApiSecret();
-    private String fromNumber = keys.getFromNumber()
+    private String fromNumber = keys.getFromNumber();
 
     public void sendMessage(String toNumber, String randNumber){
 

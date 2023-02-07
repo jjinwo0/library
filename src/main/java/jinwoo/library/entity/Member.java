@@ -4,10 +4,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter @Setter
@@ -24,4 +22,8 @@ public class Member {
     private String phoneNumber;
     @Column(name = "parents_number")
     private String parentsPhoneNumber;
+
+    @ManyToOne
+    @JoinColumn(name = "book_id")
+    private Book book;
 }
