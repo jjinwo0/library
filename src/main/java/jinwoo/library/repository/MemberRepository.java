@@ -22,4 +22,7 @@ public interface MemberRepository extends JpaRepository<Member, String> {
 
     @Query("select m from Member m where right(m.phoneNumber, 4) = :number")
     Member findByLastPhoneNumber(String number);
+
+    @Query ("select m from Member m join fetch m.book b")
+    List<Member> findBooksByMemberId(Long Id);
 }
