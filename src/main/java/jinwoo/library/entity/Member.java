@@ -23,7 +23,6 @@ public class Member {
     @Column(name = "parents_number")
     private String parentsPhoneNumber;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "book_id")
-    private Book book;
+    @OneToMany(mappedBy = "member")
+    private List<MemberBook> memberBooks;
 }

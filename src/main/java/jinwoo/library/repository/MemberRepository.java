@@ -24,5 +24,6 @@ public interface MemberRepository extends JpaRepository<Member, String> {
     Member findByLastPhoneNumber(String number);
 
     @Query ("select m from Member m join fetch m.book b")
+
     List<Member> findBooksByMemberId(Long Id);
 }

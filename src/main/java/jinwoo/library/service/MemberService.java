@@ -48,4 +48,10 @@ public class MemberService {
     public void modify(Long id, @Valid MemberForm form){
         Member findMember = memberRepository.findById(id);
     }
+
+    public void regReadBook(String number, String bookStr){
+
+        Member findMember = memberRepository.findByLastPhoneNumber(number);
+
+    }
 }

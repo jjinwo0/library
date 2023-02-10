@@ -32,4 +32,8 @@ public class BookService {
         book.setAuthor(form.getAuthor());
         book.setPublisher(form.getPublisher());
     }
+
+    public void findReadingBook(String bookStr){
+
+    }
 }

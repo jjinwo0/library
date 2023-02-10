@@ -19,7 +19,8 @@ public class Book {
     private String name;
     private String author;
     private String publisher;
+    private String code;
 
     @OneToMany(mappedBy = "book")
-    private List<Member> members;
+    private List<MemberBook> memberBooks;
 }
