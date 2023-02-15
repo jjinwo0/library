@@ -52,6 +52,5 @@ public class MemberService {
     public void regReadBook(String number, String bookStr){
 
         Member findMember = memberRepository.findByLastPhoneNumber(number);
-
     }
 }

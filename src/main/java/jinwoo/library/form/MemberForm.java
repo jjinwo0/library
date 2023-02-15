@@ -21,4 +21,10 @@ public class MemberForm {
     private String phoneNumber;
     private String parentsPhoneNumber;
 
+    public MemberForm(String username, String school, String phoneNumber, String parentsPhoneNumber) {
+        this.username = username;
+        this.school = school;
+        this.phoneNumber = phoneNumber;
+        this.parentsPhoneNumber = parentsPhoneNumber;
+    }
 }
