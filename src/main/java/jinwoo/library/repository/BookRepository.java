@@ -16,4 +16,7 @@ public interface BookRepository extends JpaRepository<Book, String> {
 
     @Query("select b from Book b where b.name = :name")
     Book findByName(String name);
+
+    @Query("select b from Book b where b.code = :code")
+    Book findByCode(String code);
 }

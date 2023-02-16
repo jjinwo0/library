@@ -1,4 +1,4 @@
-package jinwoo.library.member;
+package jinwoo.library.service;
 
 import jinwoo.library.entity.Member;
 import jinwoo.library.form.MemberForm;

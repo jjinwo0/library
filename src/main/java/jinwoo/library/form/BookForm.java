@@ -11,4 +11,10 @@ public class BookForm {
     private String name;
     private String author;
     private String publisher;
+
+    public BookForm(String name, String author, String publisher) {
+        this.name = name;
+        this.author = author;
+        this.publisher = publisher;
+    }
 }
