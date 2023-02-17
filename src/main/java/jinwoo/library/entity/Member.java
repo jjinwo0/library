@@ -26,4 +26,10 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<MemberBook> memberBooks;
 
+    public Member(String username, String school, String phoneNumber, String parentsPhoneNumber) {
+        this.username = username;
+        this.school = school;
+        this.phoneNumber = phoneNumber;
+        this.parentsPhoneNumber = parentsPhoneNumber;
+    }
 }

@@ -23,4 +23,11 @@ public class Book {
 
     @OneToMany(mappedBy = "book")
     private List<MemberBook> memberBooks;
+
+    public Book(String name, String author, String publisher, String code) {
+        this.name = name;
+        this.author = author;
+        this.publisher = publisher;
+        this.code = code;
+    }
 }

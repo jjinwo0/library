@@ -10,4 +10,8 @@ import lombok.Setter;
 public class LoginForm {
 
     private String lastNumber;
+
+    public LoginForm(String lastNumber) {
+        this.lastNumber = lastNumber;
+    }
 }
