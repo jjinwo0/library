@@ -7,7 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Getter
+@Getter @Setter
 @NoArgsConstructor
 public class MemberBook {
 
@@ -22,4 +22,14 @@ public class MemberBook {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "book_id")
     private Book book;
+
+    private String bookName;
+
+    public static MemberBook regMemberBook(Book book, String bookName){
+        MemberBook memberBook = new MemberBook();
+        memberBook.setBook(book);
+        memberBook.setBookName(bookName);
+
+        return memberBook;
+    }
 }

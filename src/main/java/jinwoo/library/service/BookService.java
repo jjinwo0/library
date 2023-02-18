@@ -5,6 +5,7 @@ import jinwoo.library.entity.Member;
 import jinwoo.library.entity.MemberBook;
 import jinwoo.library.form.BookForm;
 import jinwoo.library.repository.BookRepository;
+import jinwoo.library.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +20,7 @@ import java.util.List;
 public class BookService {
 
     private final BookRepository bookRepository;
+    private final MemberRepository memberRepository;
 
     public Book findBook(String name){
         return bookRepository.findByName(name);
@@ -61,5 +63,20 @@ public class BookService {
             }
         }
         return memberList;
+    }
+
+    @Transactional
+    public Long regBook(Long memberId, Long bookId){
+
+        //엔티티 조회
+        Member member = memberRepository.findById(memberId);
+        Book book = bookRepository.findById(bookId);
+
+        //등록할 책 정보 생성
+        MemberBook memberBook = MemberBook.regMemberBook(book, book.getName());
+
+        bookRepository.save(book);
+
+        return memberBook.getId();
     }
 }
