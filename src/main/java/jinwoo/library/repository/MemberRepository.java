@@ -21,7 +21,7 @@ public interface MemberRepository extends JpaRepository<Member, String> {
     @Query("select m from Member m where m.phoneNumber = :phoneNumber")
     Member findByPhoneNumber(String phoneNumber);
 
-    @Query("select m from Member m where right(m.phoneNumber, 4) = :number")
+    @Query("select m from Member m where substring(m.phoneNumber, -4) = :number")
     Member findByLastPhoneNumber(String number);
 
     @Query ("select m from Member m join fetch m.memberBooks b")

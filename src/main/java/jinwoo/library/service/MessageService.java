@@ -1,10 +1,10 @@
 package jinwoo.library.service;
 
-import jinwoo.library.api.ApiKeys;
 import lombok.RequiredArgsConstructor;
 import net.nurigo.java_sdk.api.Message;
 import net.nurigo.java_sdk.exceptions.CoolsmsException;
 import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -12,13 +12,14 @@ import java.util.HashMap;
 
 @Service
 @RequiredArgsConstructor
+
 public class MessageService {
-
-    private final ApiKeys keys;
-
-    private String apiKey = keys.getSmsApiKey();
-    private String apiSecret = keys.getSmsApiSecret();
-    private String fromNumber = keys.getFromNumber();
+    @Value("${coolsms-api-key}")
+    private String apiKey;
+    @Value("${coolsms-api-secret}")
+    private String apiSecret;
+    @Value("${coolsms-fromNumber}")
+    private String fromNumber;
 
     public void sendMessage(String toNumber, String randNumber){
 
