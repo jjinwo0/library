@@ -18,6 +18,5 @@ public class LoginService {
 
     public Member login(@Valid LoginForm form){
         return memberRepository.findByLastPhoneNumber(form.getLastNumber());
-
     }
 }
